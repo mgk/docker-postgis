@@ -1,4 +1,4 @@
-FROM postgres:9.6-alpine
+FROM mgkio/postgres:9.6.5-alpine
 MAINTAINER Régis Belson <me@regisbelson.fr>
 
 ENV POSTGIS_VERSION 2.5.1
@@ -49,7 +49,7 @@ RUN set -ex \
     && apk add --no-cache --virtual .postgis-rundeps \
         json-c \
     && apk add --no-cache --virtual .postgis-rundeps-edge \
-        --repository http://dl-cdn.alpinelinux.org/alpine/edge/main \        
+        --repository http://dl-cdn.alpinelinux.org/alpine/edge/main \
         --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing \
         geos \
         gdal \
